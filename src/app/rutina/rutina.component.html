@@ -1,0 +1,23 @@
+<h1>Rutina</h1>
+
+  
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Grupo</th>
+        <th scope="col">Series</th>
+        <th scope="col">Repeticiones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let R of Rutina$ | async">
+        <th scope="row"> {{R.Name}} </th>
+        <td>{{R.Grupo}}</td>
+        <td>{{R.Series}}</td>
+        <td>{{R.Repeticiones}}</td>
+    
+      </tr>
+    
+    </tbody>
+  </table>

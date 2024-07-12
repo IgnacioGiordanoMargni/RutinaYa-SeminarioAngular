@@ -1,0 +1,29 @@
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Grupo</th>
+        <th scope="col">Series</th>
+        <th scope="col">Repeticiones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let Ejercicio of Ejercicios'  [ngClass]="{'Agregado': Ejercicio.Agregado}">
+        <th scope="row">{{Ejercicio.Name}}</th>
+        <td>{{Ejercicio.Grupo}}  </td>
+        <td>
+           <app-input-quantity [ejercicio]="Ejercicio" [tipo]="'Series'"></app-input-quantity>
+  
+        </td>
+        <td>
+           <app-input-quantity [ejercicio]="Ejercicio" [tipo]="'Repeticiones'" ></app-input-quantity>
+        </td>
+        <td>
+          <button *ngIf="Ejercicio.Agregado==false" class="btn btn-primary"(click)="ChangeBoolean(Ejercicio, 'Agregado')" (click)="AnadirALaRutina(Ejercicio)" >Agregar</button>
+          <button *ngIf="Ejercicio.Agregado" class="btn btn-danger"(click)="ChangeBoolean(Ejercicio, 'Agregado')"  (click)="EliminarEjercicio(Ejercicio)" >Eliminar</button>
+        </td>
+      </tr>
+    
+    </tbody>
+  </table>
